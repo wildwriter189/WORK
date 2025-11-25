@@ -1,29 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Standard HTML metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medicine Tracker</title>
+    <!-- Link to main stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Fixed disclaimer banner at the very top -->
+    <!-- Fixed banner at the top with the provided legal disclaimer -->
     <div class="disclaimer" id="disclaimer">
         Disclaimer: All medicine names and prices used in this application are fictional
         and do not represent any real medicine(s).
     </div>
 
+    <!-- Simple page header -->
     <header>
         <h1>Medicine Tracker</h1>
     </header>
 
+    <!-- Main content area for summary, list, and forms -->
     <main>
+
+        <!-- Summary section showing the calculated average price -->
+        <section class="panel">
+            <h2>Summary</h2>
+            <p>
+                Average medicine price:
+                <strong><span id="avg-price">Loading...</span></strong>
+                <span id="avg-meta" style="font-size: 0.9rem; color: #555;"></span>
+            </p>
+        </section>
+
+        <!-- Dynamic list of medicines fetched from the backend -->
         <section>
             <h2>Available Medicines</h2>
-            <!-- This is where JS will inject the cards -->
+            <!-- JS will inject medicine cards into this container -->
             <div id="medicines-container" class="medicine-grid"></div>
         </section>
 
+        <!-- Form for creating a new medicine via the /create endpoint -->
         <section class="panel">
             <h2>Add a new medicine</h2>
             <form id="add-medicine-form">
@@ -37,10 +54,13 @@
                 </label>
                 <button type="submit">Add medicine</button>
             </form>
+            <!-- Feedback message for the add-medicine action -->
             <p id="add-message"></p>
         </section>
+
     </main>
 
+    <!-- Include the main JavaScript file at the end so DOM is loaded first -->
     <script src="script.js"></script>
 </body>
 </html>
