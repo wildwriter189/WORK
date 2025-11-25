@@ -3,19 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Medicine Tracker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Fixed disclaimer banner at the very top -->
     <div class="disclaimer" id="disclaimer">
-        Disclaimer: All medicine names and prices used in this application are fictional and do not represent any real medicine(s).
+        Disclaimer: All medicine names and prices used in this application are fictional
+        and do not represent any real medicine(s).
     </div>
+
     <header>
         <h1>Medicine Tracker</h1>
     </header>
-    <main>
 
+    <main>
+        <section>
+            <h2>Available Medicines</h2>
+            <!-- This is where JS will inject the cards -->
+            <div id="medicines-container" class="medicine-grid"></div>
+        </section>
+
+        <section class="panel">
+            <h2>Add a new medicine</h2>
+            <form id="add-medicine-form">
+                <label>
+                    Name:
+                    <input type="text" name="name" required>
+                </label>
+                <label>
+                    Price:
+                    <input type="number" name="price" step="0.01" min="0" required>
+                </label>
+                <button type="submit">Add medicine</button>
+            </form>
+            <p id="add-message"></p>
+        </section>
     </main>
+
     <script src="script.js"></script>
 </body>
 </html>
